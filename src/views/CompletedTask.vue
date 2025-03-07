@@ -1,9 +1,11 @@
 <template>
     <div>
         <h2>Completed Tasks</h2>
-
         <div>
-            <div v-for="task in taskStore.completedTasks">{{ task.title }}</div>
+            <div v-for="task in taskStore.completedTasks">
+                {{ task.title }}
+                <button type="button" @click="taskStore.removeTask(task.id)">Delete</button>
+            </div>
         </div>
     </div>
 </template>
