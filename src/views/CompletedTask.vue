@@ -2,9 +2,8 @@
     <div>
         <h2>Completed Tasks</h2>
         <div>
-            <div v-for="task in taskStore.completedTasks">
-                {{ task.title }}
-                <button type="button" @click="taskStore.removeTask(task.id)">Delete</button>
+            <div v-for="task in taskStore.tasks" :key="task.id">
+                <Task :task="task" :done="true" />
             </div>
         </div>
     </div>
@@ -12,7 +11,7 @@
 
 <script setup>
 import useTaskStore from '../store/taskStore';
-
+import Task from "../components/Task.vue"
 const taskStore = useTaskStore()
 </script>
 
