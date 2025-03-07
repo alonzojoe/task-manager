@@ -30,7 +30,7 @@ const useTaskStore = defineStore("tasks", {
     },
     setItem() {
       const storedTasks = getLocalStorage("tasks");
-      this.tasks = storedTasks;
+      this.tasks = storedTasks ?? [];
     },
   },
 });
