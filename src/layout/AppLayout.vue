@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h2>Link</h2>
-        <h2>Link</h2>
+        <router-link to="/">All Tasks</router-link>
+        <router-link to="/completed">Completed Tasks</router-link>
         <div>
             <router-view />
         </div>
