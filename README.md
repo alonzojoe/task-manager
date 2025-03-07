@@ -18,7 +18,7 @@ Follow these steps to get the project up and running:
 4. Start the development server:
    npm run dev
 
-5. Open your browser and visit http://localhost:5173 to view the landing page.
+5. Open your browser and visit http://localhost:5173 to view the app.
 
 Coding Process:
 
@@ -27,7 +27,7 @@ Coding Process:
 2. Next is to create a utils helper function for localStorage to set and get item in localStorage
 
 3. Then I create a store for tasks using Pinia State management, for state I created a tasks array,
-next is to create actions for updating the of state, addingTask, markCompleted, removeTask and setTasks to the item in localStorage, then I created a getter for completedTasks filtering the tasks with completedProperty set to true.
+   next is to create actions for updating the of state, addingTask, markCompleted, removeTask and setTasks to the item in localStorage, then I created a getter for completedTasks filtering the tasks with completedProperty set to true.
 
 4. Apply the state, action getters in template to display and modify tasks, includes storing and retrieving tasks in localStorage.
 
