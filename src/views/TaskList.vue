@@ -1,12 +1,13 @@
 <template>
     <div>
-        <h2>All Tasks</h2>
+        <h2 class="text-center text-2xl mb-5">All Tasks</h2>
 
-        <div>
+        <div v-if="taskStore.tasks.length > 0">
             <div v-for="task in taskStore.tasks" :key="task.id">
                 <Task :task="task" />
             </div>
         </div>
+        <p v-else>No records found. Would you like to add some?</p>
     </div>
 </template>
 

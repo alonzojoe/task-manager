@@ -1,14 +1,22 @@
 <template>
-    <div>
-        <router-link to="/">All Tasks</router-link>
-        <router-link to="/completed">Completed Tasks</router-link>
+    <div class="h-[100dvh] w-full flex flex-col items-center">
+        <div class="flex space-x-4 mb-4">
+            <router-link to="/" class="pb-2 border-b-2 border-white hover:border-gray-400"
+                :class="{ '!border-black': $route.path === '/' }">
+                All Tasks
+            </router-link>
+            <router-link to="/completed" class="pb-2 border-b-2 border-white hover:border-gray-400"
+                :class="{ '!border-black': $route.path === '/completed' }">
+                Completed Tasks
+            </router-link>
+        </div>
 
-        <form @submit.prevent="handleSubmit">
-            <input type="text" v-model="inputTitle">
-            <button>Add Task</button>
+
+        <form @submit.prevent="handleSubmit" class="space-y-3">
+            <InputText type="text" v-model="inputTitle" placeholder="Enter Task Title..." />
+            <Button width="w-full" type="submit" variant="dark">Add Task</Button>
         </form>
-        <pre>{{ taskStore.tasks }}</pre>
-        <div>
+        <div class="my-5">
             <router-view />
         </div>
     </div>
@@ -16,8 +24,10 @@
 
 <script setup>
 import { ref, watch, onMounted } from "vue"
-import useTaskStore from "../store/taskStore"
 import { setLocalStorage } from "../libs/utils"
+import useTaskStore from "../store/taskStore"
+import InputText from "../components/InputText.vue"
+import Button from "../components/Button.vue"
 
 const taskStore = useTaskStore()
 
@@ -30,6 +40,7 @@ const handleSubmit = () => {
         return
     }
     taskStore.addTask(inputTitle.value)
+    inputTitle.value = ""
 }
 
 watch(
