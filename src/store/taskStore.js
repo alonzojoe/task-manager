@@ -33,6 +33,11 @@ const useTaskStore = defineStore("tasks", {
       this.tasks = storedTasks ?? [];
     },
   },
+  getters: {
+    completedTasks: (state) => {
+      return state.tasks.filter((task) => task.completed);
+    },
+  },
 });
 
 export default useTaskStore;
