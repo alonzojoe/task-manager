@@ -26,8 +26,8 @@ Coding Process:
 
 2. Next is to create a utils helper function for localStorage to set and get item in localStorage
 
-3. Then I create a store for tasks using Pinia State management, for state i created a tasks array,
-next is to create actions for updating the of state, addingTask, markCompleted, removeTask and setTasks to the item in localStorage, then i created a getter for completedTasks filtering the tasks with completedProperty set to true.
+3. Then I create a store for tasks using Pinia State management, for state I created a tasks array,
+next is to create actions for updating the of state, addingTask, markCompleted, removeTask and setTasks to the item in localStorage, then I created a getter for completedTasks filtering the tasks with completedProperty set to true.
 
 4. Apply the state, action getters in template to display and modify tasks, includes storing and retrieving tasks in localStorage.
 
